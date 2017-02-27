@@ -172,7 +172,7 @@ namespace EditXmlDemo
                 if (attCode == null)
                     continue;
 
-                if (text == "Unit")
+                if (text == "EventUnit") // if (text == "Unit")
                 {
                     string sUnit = attCode.Value;
                     attCode.Value = RSCCode + sUnit;
