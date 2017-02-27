@@ -12,8 +12,8 @@ namespace EditXmlDemo
         static void Main(string[] args)
         {
             // DT_PARTIC. Cambiamos las fechas desde el formato "AAAAMMDD" a "AAAA-MM-DD", para el tag : "BirthDate".
-            string path = @"C:\Desarrollo\Definitions\INITS\PT Messages Generator GOLD COAST\java\messages\ORIGINAL\LBO_DT_PARTIC.xml";
-            changeBirthDatePartic(path);
+            // string path = @"C:\Desarrollo\Definitions\INITS\PT Messages Generator GOLD COAST\java\messages\ORIGINAL\LBO_DT_PARTIC.xml";
+            // changeBirthDatePartic(path);
 
             /* DT_SCHEDULE. Cambiamos :
                <Discipline Code="LB">
@@ -30,7 +30,41 @@ namespace EditXmlDemo
             */
             // string path = @"C:\Desarrollo\Definitions\INITS\PT Messages Generator GOLD COAST\java\messages\ORIGINAL\LBO_DT_SCHEDULE.xml";
             // changeRSCCodeStructureSchedule(path);
+
+
+            // DT_RESULT. Cambiamos tag "Previous_Result" por "PreviousResult".
+            string path = @"C:\Desarrollo\Definitions\INITS\PT Messages Generator GOLD COAST\java\messages\ORIGINAL\LBO_DT_RESULT.xml";
+            changePreviousResult(path);
         }
+
+        /////////////////////////////////////////////////////////
+        // Change DT_RESULT.
+        static void changePreviousResult(string path)
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(path);
+            XmlNode root = doc.DocumentElement;
+            XmlNode node = root.SelectSingleNode("/OdfBody/Competition");
+            foreach (XmlNode nodeChild in node.ChildNodes)
+            {
+                if (nodeChild.Attributes == null)
+                    continue;
+
+                string text = nodeChild.Name; //or loop through its children as well
+                var attCode = nodeChild.Attributes["Code"];
+                if (attCode == null)
+                    continue;
+
+                if (text == "Previous_Result")
+                {
+                    string sDisciplina = attCode.Value;
+                    addDisciplineSchedule(nodeChild, sDisciplina);
+                }
+            }
+            doc.Save(path);
+        }
+        // Change DT_RESULT.
+        /////////////////////////////////////////////////////////
 
         /////////////////////////////////////////////////////////
         // Change DT_SCHEDULE.

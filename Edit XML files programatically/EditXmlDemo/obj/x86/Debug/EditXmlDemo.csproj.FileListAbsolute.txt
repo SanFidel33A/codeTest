@@ -1,0 +1,4 @@
+C:\ATOS\GitHub\CodeTest\Edit XML files programatically\EditXmlDemo\bin\Debug\EditXmlDemo.exe
+C:\ATOS\GitHub\CodeTest\Edit XML files programatically\EditXmlDemo\bin\Debug\EditXmlDemo.pdb
+C:\ATOS\GitHub\CodeTest\Edit XML files programatically\EditXmlDemo\obj\x86\Debug\EditXmlDemo.exe
+C:\ATOS\GitHub\CodeTest\Edit XML files programatically\EditXmlDemo\obj\x86\Debug\EditXmlDemo.pdb
