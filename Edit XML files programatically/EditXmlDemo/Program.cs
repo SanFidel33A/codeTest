@@ -12,8 +12,8 @@ namespace EditXmlDemo
         static void Main(string[] args)
         {
             // DT_PARTIC. Cambiamos las fechas desde el formato "AAAAMMDD" a "AAAA-MM-DD", para el tag : "BirthDate".
-            string path = @"C:\Desarrollo\Definitions\INITS\PT Messages Generator GOLD COAST\java\messages\ORIGINAL\LBO_DT_PARTIC.xml";
-            changeBirthDatePartic(path);
+            // string path = @"C:\Desarrollo\Definitions\INITS\PT Messages Generator GOLD COAST\java\messages\ORIGINAL\LBO_DT_PARTIC.xml";
+            // changeBirthDatePartic(path);
 
             /* DT_SCHEDULE. Cambiamos :
                <Discipline Code="LB">
@@ -28,8 +28,8 @@ namespace EditXmlDemo
                       <Phase Code="1" Type="3">
                         <Unit Code="LBM004102" PhaseType="3" .... /> // PhaseType=Type
             */
-            // string path = @"C:\Desarrollo\Definitions\INITS\PT Messages Generator GOLD COAST\java\messages\ORIGINAL\LBO_DT_SCHEDULE.xml";
-            // changeRSCCodeStructureSchedule(path);
+            string path = @"C:\Desarrollo\Definitions\INITS\PT Messages Generator GOLD COAST\java\messages\ORIGINAL\LBO_DT_SCHEDULE.xml";
+            changeRSCCodeStructureSchedule(path);
         }
 
         /////////////////////////////////////////////////////////
